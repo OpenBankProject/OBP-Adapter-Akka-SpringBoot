@@ -35,7 +35,7 @@ akka_connector.port=2662
 > spring  run RemoteEndpoints.groovy -- --server.port=9094
 ```
 * start adapter by call main class: com.openbankproject.adapter.ApplicationDevMain
-or by command, now only "Get Adapter Info (general)" endpoint is works.
+or by command, now only "Get Bank" and "Get Banks" endpoints works.
 in the project folder, execute follow command to pacakge and start project:
 
 ```
