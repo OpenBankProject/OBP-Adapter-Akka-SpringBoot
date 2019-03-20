@@ -17,7 +17,7 @@ The project is using Maven 3 as a build tool.
 Se pom.xml respectively for the dependencies.
 --
 ## install
-* clone the OBP-API project develop branch: (OBP-API)[https://github.com/OpenBankProject/OBP-API.git], run command: 
+* clone the OBP-API project develop branch: [OBP-API](https://github.com/OpenBankProject/OBP-API.git), run command: 
 ```
 mvn clean install -pl obp-commons
 ```
@@ -28,7 +28,7 @@ akka_connector.hostname=127.0.0.1
 akka_connector.port=2662
 ```
 
-* install spring boot cli (spring boot cli)[https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli]
+* install spring boot cli [spring boot cli](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli)
 * start mock remote server:
 ```
 > cd obp-adapter/src/test/resources/
