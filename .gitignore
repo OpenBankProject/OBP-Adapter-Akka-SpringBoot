@@ -1,0 +1,12 @@
+*.class
+*.db
+.DS_Store
+*.scala.orig
+*.log
+.idea
+.settings
+.classpath
+.project
+.cache
+target
+*.iml

@@ -19,7 +19,7 @@ Se pom.xml respectively for the dependencies.
 ## install
 * clone the OBP-API project develop branch: [OBP-API](https://github.com/OpenBankProject/OBP-API.git), run command: 
 ```
-mvn clean install -pl obp-commons
+mvn clean install -pl .,obp-commons
 ```
 * follow the README.md of OBP-API to initiate project, and modify the default.props file in OBP-API should have the follow settings
 ```
