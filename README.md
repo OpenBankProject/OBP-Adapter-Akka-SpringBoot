@@ -31,7 +31,7 @@ akka_connector.port=2662
 * install spring boot cli [spring boot cli](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli)
 * start mock remote server:
 ```
-> cd obp-adapter/src/test/resources/
+> cd src/test/resources/
 > spring  run RemoteEndpoints.groovy -- --server.port=9094
 ```
 * start adapter by call main class: com.openbankproject.adapter.ApplicationDevMain
