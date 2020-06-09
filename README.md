@@ -15,6 +15,7 @@ This project is licensed under the AGPL V3 (see NOTICE) and a commercial license
 
 The project is using Maven 3 as a build tool.
 Se pom.xml respectively for the dependencies.
+This project should compile and run with JDK 1.8, OBP-API can be any JDK version from 1.8 to 13.
 --
 ## install
 * clone the OBP-API project develop branch: [OBP-API](https://github.com/OpenBankProject/OBP-API.git), run command: 
