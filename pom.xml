@@ -17,7 +17,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<scala.version>2.12</scala.version>
-		<scala.compiler>2.12.4</scala.compiler>
+		<scala.compiler>2.12.10</scala.compiler>
 		<akka.version>2.5.19</akka.version>
 	</properties>
 
@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>com.tesobe</groupId>
 			<artifactId>obp-commons</artifactId>
-			<version>1.0</version>
+			<version>1.4.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
