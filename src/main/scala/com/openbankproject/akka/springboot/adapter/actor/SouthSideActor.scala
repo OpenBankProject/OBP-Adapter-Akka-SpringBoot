@@ -6,6 +6,7 @@ import akka.actor.Actor
 import com.openbankproject.akka.springboot.adapter.service.BankService
 import com.openbankproject.commons.dto._
 import com.openbankproject.commons.model.{InboundAccountCommons, _}
+import com.openbankproject.utils.APIUtil
 import javax.annotation.Resource
 import org.springframework.beans.factory.config.ConfigurableBeanFactory
 import org.springframework.context.annotation.Scope
@@ -20,12 +21,12 @@ class SouthSideActor  extends Actor  {
   @Resource
   val bankService: BankService = null
 
-  val mockAdapaterInfo =
+  val mockAdapterInfo =
     s"""
        |{
-       |  "name":"String",
-       |  "version":"String",
-       |  "git_commit":"String",
+       |  "name":"Akka adapter",
+       |  "version":"vDec2018",
+       |  "git_commit":"${APIUtil.gitCommit}",
        |  "date":"${new Date()}"
        |}
     """.stripMargin
@@ -33,7 +34,7 @@ class SouthSideActor  extends Actor  {
   def receive = {
     case OutBoundGetBanks(InCC(inboundAdapterCallContext)) => sender ! InBoundGetBanks(inboundAdapterCallContext, Status("", Nil), bankService.getBanks())
     case OutBoundGetBank(InCC(inboundAdapterCallContext), bankId) => sender ! InBoundGetBank(inboundAdapterCallContext, Status("", Nil), this.bankService.getBankById(bankId.value))
-    case OutBoundGetAdapterInfo(InCC(inboundAdapterCallContext)) => sender ! InBoundGetAdapterInfo(inboundAdapterCallContext, Status("", Nil), InboundAdapterInfoInternal("", Nil, "akka-springBoot", "01", "friday", new Date().toString))
+    case OutBoundGetAdapterInfo(InCC(inboundAdapterCallContext)) => sender ! InBoundGetAdapterInfo(inboundAdapterCallContext, Status("", Nil), InboundAdapterInfoInternal("", Nil, "Adapter-Akka-SpringBoot", "vDec2018", APIUtil.gitCommit, new Date().toString))
     case OutBoundGetBankAccountsForUser(InCC(inboundAdapterCallContext), username) => sender ! InBoundGetBankAccountsForUser(
       inboundAdapterCallContext,
       Status("", Nil),
@@ -67,7 +68,7 @@ class SouthSideActor  extends Actor  {
       sender ! InBoundGetCoreBankAccounts(inboundAdapterCallContext, Status("", Nil),
         coreAccounts)
 
-    case _ => sender ! mockAdapaterInfo
+    case _ => sender ! mockAdapterInfo
 
 //    case OutBoundGetCoreBankAccounts(bankIdAccountIds, adapterCallContext) => sender ! InBoundGetCoreBankAccounts(getCoreBankAccountsAllBanks(bankIdAccountIds, adapterCallContext.get), adapterCallContext)
   }
