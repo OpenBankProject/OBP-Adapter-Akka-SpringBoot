@@ -25,7 +25,7 @@ class SouthSideActor  extends Actor  {
     s"""
        |{
        |  "name":"Akka adapter",
-       |  "version":"vDec2018",
+       |  "version":"Dec2018",
        |  "git_commit":"${APIUtil.gitCommit}",
        |  "date":"${new Date()}"
        |}
@@ -34,7 +34,7 @@ class SouthSideActor  extends Actor  {
   def receive = {
     case OutBoundGetBanks(InCC(inboundAdapterCallContext)) => sender ! InBoundGetBanks(inboundAdapterCallContext, Status("", Nil), bankService.getBanks())
     case OutBoundGetBank(InCC(inboundAdapterCallContext), bankId) => sender ! InBoundGetBank(inboundAdapterCallContext, Status("", Nil), this.bankService.getBankById(bankId.value))
-    case OutBoundGetAdapterInfo(InCC(inboundAdapterCallContext)) => sender ! InBoundGetAdapterInfo(inboundAdapterCallContext, Status("", Nil), InboundAdapterInfoInternal("", Nil, "Adapter-Akka-SpringBoot", "vDec2018", APIUtil.gitCommit, new Date().toString))
+    case OutBoundGetAdapterInfo(InCC(inboundAdapterCallContext)) => sender ! InBoundGetAdapterInfo(inboundAdapterCallContext, Status("", Nil), InboundAdapterInfoInternal("", Nil, "Adapter-Akka-SpringBoot", "Dec2018", APIUtil.gitCommit, new Date().toString))
     case OutBoundGetBankAccountsForUser(InCC(inboundAdapterCallContext), username) => sender ! InBoundGetBankAccountsForUser(
       inboundAdapterCallContext,
       Status("", Nil),
