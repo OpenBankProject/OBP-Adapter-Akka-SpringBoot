@@ -39,7 +39,7 @@ or by command, now only "Get Bank" and "Get Banks" endpoints works.
 in the project folder, execute follow command to package and start project:
 
 ```
-~/OBP-Adapter-Akka-SpringBoot $ mvn package
-~/OBP-Adapter-Akka-SpringBoot $ java -jar target/adapter-akka-springboot-1.1.0.jar
+~/OBP-Adapter-Akka-SpringBoot $ mvn install -pl .,adapter-akka-commons && mvn package
+~/OBP-Adapter-Akka-SpringBoot $ java -jar adapter-akka-main/target/adapter-akka-main-1.1.0.jar
 ```
 * the adapter is ready, you can call get banks and get bank by id from obp explorer.
