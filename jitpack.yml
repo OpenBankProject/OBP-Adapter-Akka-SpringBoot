@@ -1,0 +1,3 @@
+install:
+  - echo "Running a custom install command"
+  - mvn clean source:jar install -pl .,adapter-akka-commons && mvn source:jar install -pl adapter-akka-main
