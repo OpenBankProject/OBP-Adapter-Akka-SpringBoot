@@ -1,7 +1,7 @@
-package com.openbankproject.akka.springboot.adapter
+package com.openbankproject.adapter.akka.springboot.main
 
-import com.openbankproject.akka.springboot.adapter.config.AkkaConfig
-import com.openbankproject.akka.springboot.adapter.service.RestTransfer
+import com.openbankproject.adapter.akka.commons.config.AkkaConfig
+import com.openbankproject.adapter.akka.springboot.main.service.RestTransfer
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.cloud.openfeign.EnableFeignClients

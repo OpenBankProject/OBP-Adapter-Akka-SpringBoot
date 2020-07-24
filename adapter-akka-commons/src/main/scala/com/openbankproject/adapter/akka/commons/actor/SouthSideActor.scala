@@ -1,4 +1,4 @@
-package com.openbankproject.akka.springboot.adapter.actor
+package com.openbankproject.adapter.akka.commons.actor
 
 import java.util.Date
 
@@ -6,7 +6,7 @@ import akka.actor.Actor
 import com.openbankproject.commons.ExecutionContext.Implicits.global
 import com.openbankproject.commons.dto.OutInBoundTransfer
 import com.openbankproject.commons.model._
-import com.openbankproject.utils.APIUtil
+import com.openbankproject.adapter.akka.commons.utils.APIUtil
 
 class SouthSideActor(outInBoundTransfer: OutInBoundTransfer) extends Actor  {
 

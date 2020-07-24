@@ -1,4 +1,4 @@
-package com.openbankproject.utils
+package com.openbankproject.adapter.akka.commons.utils
 
 object APIUtil {
   /*

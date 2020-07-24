@@ -1,4 +1,4 @@
-package com.openbankproject.akka.springboot.adapter.config
+package com.openbankproject.adapter.akka.springboot.main.config
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.{Bean, Configuration}

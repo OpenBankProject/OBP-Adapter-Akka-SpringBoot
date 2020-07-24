@@ -1,9 +1,7 @@
-package com.openbankproject.akka.springboot.adapter
+package com.openbankproject.adapter.akka.springboot.main
 
 import akka.actor.{ActorRef, ActorSystem, Props}
 import com.github.tomakehurst.wiremock.junit.WireMockRule
-import com.openbankproject.akka.springboot.adapter.actor.ResultActor
-import com.openbankproject.akka.springboot.adapter.service.RestService
 import javax.annotation.Resource
 import org.junit.runner.RunWith
 import org.junit.{After, Before, Ignore, Rule, Test}
@@ -12,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.junit4.SpringRunner
 import com.github.tomakehurst.wiremock.client.WireMock._
+import com.openbankproject.adapter.akka.commons.actor.SouthSideActor
+import com.openbankproject.adapter.akka.springboot.main.service.{RestService, RestTransfer}
 import com.openbankproject.commons.dto.OutBoundGetBanks
 import com.openbankproject.commons.util.JsonSerializers
 import net.liftweb.json
@@ -74,7 +74,7 @@ class AkkaAdapterApplicationTest{
 
   @Test
   def contextLoads ={
-    val client:ActorRef = actorSystem.actorOf (Props.create (classOf[ResultActor]), "client")
+    val client:ActorRef = actorSystem.actorOf (Props.create(classOf[SouthSideActor], new RestTransfer), "client")
     val actorSelection = actorSystem.actorSelection ("akka.tcp://SouthSideAkkaConnector_127-0-0-1@127.0.0.1:2662/user/akka-connector-actor")
     actorSelection.tell ("increase", client)
     actorSelection.tell ("increase", client)

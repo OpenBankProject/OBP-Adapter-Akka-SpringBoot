@@ -1,4 +1,4 @@
-package com.openbankproject.akka.springboot.adapter.config
+package com.openbankproject.adapter.akka.springboot.main.config
 
 import java.util
 

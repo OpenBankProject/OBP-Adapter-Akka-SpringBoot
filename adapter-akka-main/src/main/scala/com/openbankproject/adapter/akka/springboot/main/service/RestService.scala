@@ -1,4 +1,4 @@
-package com.openbankproject.akka.springboot.adapter.service
+package com.openbankproject.adapter.akka.springboot.main.service
 
 import com.openbankproject.commons.model.TopicTrait
 import org.springframework.cloud.openfeign.FeignClient

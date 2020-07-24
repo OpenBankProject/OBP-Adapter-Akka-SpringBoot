@@ -1,8 +1,8 @@
-package com.openbankproject.akka.springboot.adapter.config
+package com.openbankproject.adapter.akka.commons.config
 
 import akka.actor.{ActorSystem, Props}
-import com.openbankproject.akka.springboot.adapter.actor.SouthSideActor
-import com.openbankproject.akka.springboot.adapter.service.RestTransfer
+import com.openbankproject.adapter.akka.commons.actor.SouthSideActor
+import com.openbankproject.commons.dto.OutInBoundTransfer
 import com.typesafe.config.ConfigFactory
 import org.slf4j.LoggerFactory
 
@@ -11,7 +11,7 @@ import scala.concurrent.duration._
 import scala.language.postfixOps
 
 
-class AkkaConfig(restTransfer: RestTransfer) {
+class AkkaConfig(outInBoundTransfer: OutInBoundTransfer) {
 
   val logger = LoggerFactory.getLogger(classOf[AkkaConfig])
   val SYSTEM_NAME = "SouthSideAkkaConnector_"
@@ -19,7 +19,7 @@ class AkkaConfig(restTransfer: RestTransfer) {
     val loadConfig = ConfigFactory.load
     val hostname = loadConfig.getString("akka.remote.netty.tcp.hostname")
     val system = ActorSystem.create(SYSTEM_NAME + hostname.replace('.', '-'), loadConfig)
-    system.actorOf(Props.create(classOf[SouthSideActor], restTransfer), "akka-connector-actor")
+    system.actorOf(Props.create(classOf[SouthSideActor], outInBoundTransfer), "akka-connector-actor")
 
     system
   }

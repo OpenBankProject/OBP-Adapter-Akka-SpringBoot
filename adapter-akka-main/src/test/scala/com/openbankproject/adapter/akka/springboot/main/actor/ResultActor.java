@@ -1,4 +1,4 @@
-package com.openbankproject.akka.springboot.adapter.actor;
+package com.openbankproject.adapter.akka.springboot.main.actor;
 
 
 import akka.actor.UntypedActor;

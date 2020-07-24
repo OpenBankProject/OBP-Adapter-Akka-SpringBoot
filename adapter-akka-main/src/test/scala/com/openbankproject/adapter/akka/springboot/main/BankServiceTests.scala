@@ -1,6 +1,6 @@
-package com.openbankproject.akka.springboot.adapter
+package com.openbankproject.adapter.akka.springboot.main
 
-import com.openbankproject.akka.springboot.adapter.service.RestService
+import com.openbankproject.adapter.akka.springboot.main.service.RestService
 import javax.annotation.Resource
 import org.junit.Test
 import org.junit.runner.RunWith

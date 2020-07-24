@@ -1,4 +1,4 @@
-package com.openbankproject.akka.springboot.adapter.endpoint
+package com.openbankproject.adapter.akka.springboot.main.endpoint
 
 import io.swagger.annotations.Api
 import org.springframework.web.bind.annotation._

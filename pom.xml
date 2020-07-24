@@ -52,7 +52,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.oldbig.OBP-API</groupId>
+			<groupId>com.github.OpenBankProject.OBP-API</groupId>
 			<artifactId>obp-commons</artifactId>
 			<version>develop-SNAPSHOT</version>
 		</dependency>
