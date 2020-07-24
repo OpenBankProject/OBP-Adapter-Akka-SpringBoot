@@ -24,12 +24,17 @@ adapter:
   # set url to OBP-API ConnectorEndpoints url, note: in OBP-API props should have settings: connector.name.export.as.endpoint=mapped
   remote.base.url: http://127.0.0.1:8080/connector
 ```
-* follow the README.md of OBP-API to initiate project, and modify the default.props file in OBP-API should have the follow settings
+* follow the README.md of OBP-API to initiate project, the `default.props` file in OBP-API should have the follow settings
 ```
 connector=akka_vDec2018
 akka_connector.hostname=127.0.0.1
 akka_connector.port=2662
+
+connector.name.export.as.endpoint=mapped
 ```
+
+* the adapter can run embed in OBP-API, just add one setting in the `default.props` file of OBP-API
+`akka_connector.embed_adapter=true`
 
 * start adapter by call main class: com.openbankproject.adapter.akka.springboot.main.ApplicationDevMain
 or by command.
@@ -40,3 +45,4 @@ in the project folder, execute follow command to package and start project:
 ~/OBP-Adapter-Akka-SpringBoot $ java -jar adapter-akka-main/target/adapter-akka-main-1.1.0.jar
 ```
 * the adapter is ready, you can call get banks and get bank by id from obp explorer.
+* [this is a demonstration video](https://vimeo.com/441484286)
