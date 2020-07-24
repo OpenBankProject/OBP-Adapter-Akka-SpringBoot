@@ -3,9 +3,6 @@ server:
   port: 8083
 
 adapter:
-  akka:
-    host: 127.0.0.1
-    port: 8080
   # set url to OBP-API ConnectorEndpoints url, note: in OBP-API props should have settings: connector.name.export.as.endpoint=mapped
   remote.base.url: http://127.0.0.1:8080/connector
 

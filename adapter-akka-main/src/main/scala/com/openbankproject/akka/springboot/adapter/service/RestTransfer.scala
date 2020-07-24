@@ -28,7 +28,6 @@ class RestTransfer extends OutInBoundTransfer {
       case ConnectorMethodRegex(x, y) => s"${x.toLowerCase()}$y"
       case x => x
     }
-    val outboundJson = json.compactRender(json.Extraction.decompose(outbound))
     val responseEntity: ResponseEntity[String] = restService.sendOutboundInstance(connectorMethod, outbound)
     if(responseEntity.getStatusCode.is2xxSuccessful()) {
       val inboundClass = Class.forName(s"com.openbankproject.commons.dto.InBound${connectorMethod.capitalize}")
