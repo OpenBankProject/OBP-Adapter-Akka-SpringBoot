@@ -10,9 +10,7 @@ object APIUtil {
       properties.load(getClass().getClassLoader().getResourceAsStream("git.properties"))
       properties.getProperty("git.commit.id", "")
     } catch {
-      case e: Throwable => { // Return empty string
-        ""
-      }
+      case _: Throwable => "" // Return empty string
     }
     commit
   }

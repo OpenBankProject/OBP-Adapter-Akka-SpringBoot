@@ -1,6 +1,6 @@
 package com.openbankproject.akka.springboot.adapter
 
-import com.openbankproject.akka.springboot.adapter.service.BankService
+import com.openbankproject.akka.springboot.adapter.service.RestService
 import javax.annotation.Resource
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -12,11 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 class BankServiceTests {
 
   @Resource
-  val bankService: BankService = null
+  val bankService: RestService = null
 
   @Test
   def getBanksTest = {
-    val account = this.bankService.getCoreBankAccount("bankId", "accountId")
-    println(account)
+//    val account = this.bankService.getCoreBankAccount("bankId", "accountId")
+//    println(account)
   }
 }

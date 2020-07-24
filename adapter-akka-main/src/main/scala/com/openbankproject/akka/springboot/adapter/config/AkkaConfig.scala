@@ -36,7 +36,7 @@ class AkkaConfig {
   }
 
   @Bean
-  def sourthSideActorRef(adapterBuilder: ActorBuilder) = adapterBuilder.getActorRef(classOf[SouthSideActor], "akka-connector-actor")
+  def southSideActorRef(adapterBuilder: ActorBuilder) = adapterBuilder.getActorRef(classOf[SouthSideActor], "akka-connector-actor")
 }
 
 
@@ -44,9 +44,9 @@ class AkkaConfig {
 class ActorBuilder {
 
   @Resource
-  private var applicationContext:ApplicationContext = null
+  private val applicationContext:ApplicationContext = null
   @Resource
-  private var actorSystem:ActorSystem = null
+  private val actorSystem:ActorSystem = null
 
   def getActorRef(actorType: Class[_ <: Actor], actorName: String): ActorRef = this.getActorRef(actorType.getSimpleName, actorName)
 
