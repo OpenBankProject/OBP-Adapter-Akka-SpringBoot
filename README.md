@@ -18,9 +18,11 @@ Se pom.xml respectively for the dependencies.
 This project should compile and run with JDK 1.8, OBP-API can be any JDK version from 1.8 to 13.
 --
 ## install
-* clone the OBP-API project develop branch: [OBP-API](https://github.com/OpenBankProject/OBP-API.git), run command: 
+* modify application.yaml, the `adapter.remote.base.url` value should be any OBP-API ConnectorEndpoints url: 
 ```
-~/OBP-API $ mvn clean install -pl .,obp-commons
+adapter:
+  # set url to OBP-API ConnectorEndpoints url, note: in OBP-API props should have settings: connector.name.export.as.endpoint=mapped
+  remote.base.url: http://127.0.0.1:8080/connector
 ```
 * follow the README.md of OBP-API to initiate project, and modify the default.props file in OBP-API should have the follow settings
 ```
@@ -29,13 +31,8 @@ akka_connector.hostname=127.0.0.1
 akka_connector.port=2662
 ```
 
-* install spring boot cli [spring boot cli](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html#getting-started-installing-the-cli)
-* start mock remote server:
-```
-~/OBP-Adapter-Akka-SpringBoot $ spring  run src/test/resources/RemoteEndpoints.groovy -- --server.port=9094
-```
-* start adapter by call main class: com.openbankproject.adapter.ApplicationDevMain
-or by command, now only "Get Bank" and "Get Banks" endpoints works.
+* start adapter by call main class: com.openbankproject.adapter.akka.springboot.main.ApplicationDevMain
+or by command.
 in the project folder, execute follow command to package and start project:
 
 ```
