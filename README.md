@@ -15,7 +15,7 @@ This project is licensed under the AGPL V3 (see NOTICE) and a commercial license
 
 The project is using Maven 3 as a build tool.
 Se pom.xml respectively for the dependencies.
-This project should compile and run with JDK 1.8, OBP-API can be any JDK version from 1.8 to 13.
+This project should compile and run with JDK 1.8, but OBP-API can be any JDK version from 1.8 to 13.
 --
 ## install
 * modify application.yaml, the `adapter.remote.base.url` value should be any OBP-API ConnectorEndpoints url: 
@@ -33,15 +33,18 @@ akka_connector.port=2662
 connector.name.export.as.endpoint=mapped
 ```
 
-* the adapter can run embed in OBP-API, just add one setting in the `default.props` file of OBP-API
-`akka_connector.embed_adapter=true`
+* the adapter can run embed in OBP-API, the `default.props` file of OBP-API should have the follow settings:
+```
+connector=akka_vDec2018
+akka_connector.embed_adapter=true
+```
 
 * start adapter by call main class: com.openbankproject.adapter.akka.springboot.main.ApplicationDevMain
 or by command.
 in the project folder, execute follow command to package and start project:
 
 ```
-~/OBP-Adapter-Akka-SpringBoot $ mvn install -pl .,adapter-akka-commons && mvn package
+~/OBP-Adapter-Akka-SpringBoot $ mvn install -U -pl .,adapter-akka-commons && mvn package -U
 ~/OBP-Adapter-Akka-SpringBoot $ java -jar adapter-akka-main/target/adapter-akka-main-1.1.0.jar
 ```
 * the adapter is ready, you can call get banks and get bank by id from obp explorer.
