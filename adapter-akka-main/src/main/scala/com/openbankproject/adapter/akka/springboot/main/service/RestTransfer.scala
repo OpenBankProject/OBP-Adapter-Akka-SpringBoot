@@ -1,6 +1,6 @@
 package com.openbankproject.adapter.akka.springboot.main.service
 
-import com.openbankproject.commons.ExecutionContext.Implicits.global
+import scala.concurrent.ExecutionContext.Implicits.global
 import com.openbankproject.commons.dto.{InBoundTrait, OutInBoundTransfer}
 import com.openbankproject.commons.model.TopicTrait
 import com.openbankproject.commons.util.JsonSerializers
