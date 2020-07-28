@@ -36,7 +36,7 @@ connector.name.export.as.endpoint=mapped
 * the adapter can run embed in OBP-API, the `default.props` file of OBP-API should have the follow settings:
 ```
 connector=akka_vDec2018
-akka_connector.embed_adapter=true
+akka_connector.embedded_adapter=true
 ```
 
 * start adapter by call main class: com.openbankproject.adapter.akka.springboot.main.ApplicationDevMain
