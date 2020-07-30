@@ -48,4 +48,4 @@ in the project folder, execute follow command to package and start project:
 ~/OBP-Adapter-Akka-SpringBoot $ java -jar adapter-akka-main/target/adapter-akka-main-1.1.0.jar
 ```
 * the adapter is ready, you can call get banks and get bank by id from obp explorer.
-* [this is a demonstration video](https://vimeo.com/441484286)
+* [this is a demonstration video](https://vimeo.com/441506798)
